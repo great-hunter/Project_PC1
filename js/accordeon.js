@@ -9,6 +9,3 @@ contents.forEach((elem) => {
   });
   // console.dir(descr.classList.remove);
 });
-
- 
-// 00 : 00 : 35
