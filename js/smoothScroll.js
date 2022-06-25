@@ -4,6 +4,14 @@ const links = navbar.querySelectorAll('a');
 links.forEach((link) => {
   link.addEventListener('click', (event) => {
     event.preventDefault();
-    console.log(link);
+    const section = document.querySelector(link.getAttribute('href'));
+
+    if (section) {
+      seamless.scrollIntoView(section, {
+        behavior: "smooth",
+        block: "start",
+        inline: "center",
+    });
+    }
   });
 });
