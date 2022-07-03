@@ -5,6 +5,17 @@ const secondsBlock = document.querySelector('.timer__seconds');
 
 let interval;
 
+const numWorld = (value, words) => {
+  value = Math.abs(value) % 100;
+  const lastNum = value % 10;
+
+  if (value > 10 && value < 20) return words[2];
+  if (lastNum > 1 && lastNum < 5) return words[1];
+  if (lastNum === 1) return words[0];
+  
+  return words[2];
+}
+
 const updateTimer = () => {
   const date = new Date();
   const dateDeadLine = new Date('19 july 2022').getTime();
@@ -24,6 +35,8 @@ const updateTimer = () => {
   hoursBlock.textContent = fHours;
   minutesBlock.textContent = fMinutes;
   secondsBlock.textContent = fSeconds;
+
+  secondsBlock.nextElementSibling.textContent = numWorld(seconds, ['секунда', 'секунды', 'секунд'])
 
   if (timeRemaining <= 0) {
     clearInterval(interval);
