@@ -14,8 +14,11 @@ const addCloseBtn = () => {
   closeBtn.style.padding = '3px';
   closeBtn.style.width = '20px';
   closeBtn.style.height = '20px';
-  closeBtn.style.fontSize = '20px';
+  closeBtn.style.fontSize = '26px';
   closeBtn.style.cursor = 'pointer';
+  closeBtn.style.display = 'flex';
+  closeBtn.style.justifyContent = 'center';
+  closeBtn.style.alignItems = 'center';
 
   modalInner.append(closeBtn);
 
